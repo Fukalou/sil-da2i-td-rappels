@@ -1,4 +1,6 @@
-function getBlock($file, $data = [])
-{
-	require $file;
-}
+<?php
+	function getBlock($file, $data = [])
+	{
+		require $file;
+	}
+?>

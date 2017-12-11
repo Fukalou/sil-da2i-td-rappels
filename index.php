@@ -7,14 +7,6 @@
 	{
 	        die('Erreur : ' . $e->getMessage());
 	}
-
-	function getBlock($file, $data = [])
-	{
-		require $file;
-	}
-
-	$reponse = $bdd->query('SELECT * FROM picture');
-	$donnee = $reponse->fetch();
 ?>
 <!Doctype html>
 <html>

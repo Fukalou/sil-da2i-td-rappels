@@ -1,5 +1,5 @@
 <?php 
-function getBlock($file, $data = [])
+	function getBlock($file, $data = [])
 	{
 	    require $file;
 	}
