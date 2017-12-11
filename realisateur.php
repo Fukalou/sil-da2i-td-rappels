@@ -1,6 +1,6 @@
 <?php
-	include 'connect.php';
-	include 'fonction.php';
+	include('connect.php');
+	include('fonction.php');
 ?>
 
 <!Doctype html>
@@ -21,14 +21,14 @@
 			</nav>
 			<section>
 					<?php
-						include 'info_dyna_rea/info/info_shane_black.php';
-						include 'info_dyna_rea/bio/bio_shane_black.php';
+						include('info_dyna_rea/info/info_shane_black.php');
+						include('info_dyna_rea/bio/bio_shane_black.php');
 					?>
 			</section>
 		</main>
 		<?php
-			include 'info_dyna_rea/filmo/filmo_shane_black.php';
-			include 'info_dyna_rea/acteur_fetiche/liste_shane_black.php';
+			include('info_dyna_rea/filmo/filmo_shane_black.php');
+			include('info_dyna_rea/acteur_fetiche/liste_shane_black.php');
 			
 		?>
 		<footer>
