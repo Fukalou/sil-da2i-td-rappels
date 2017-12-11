@@ -28,13 +28,9 @@
 		</main>
 		<?php
 			include 'info_dyna_rea/filmo/filmo_shane_black.php';
+			include 'info_dyna_rea/acteur_fetiche/liste_shane_black.php';
+			
 		?>
-		<section>
-			<h3>Acteur Fétiches :</h3>
-			<ul>
-				<li></li>
-			</ul>
-		</section>
 		<footer>
 			<p>Thomas Duprez</p>
 		</footer>

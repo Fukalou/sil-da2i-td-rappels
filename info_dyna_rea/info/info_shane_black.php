@@ -10,7 +10,7 @@
 <article>
 	<h3>Réalisateur :</h3>
 	<figure>
-		<img alt="<?php $donnee2['legend'] ;?>" src="<?php $donnee2['path'] ;?>">
+		<img alt="<?php echo $donnee2['legend'] ; ?>" src="<?php echo $donnee2['path']; ?>"/>
 	</figure>
 	<ul>
 		<li>Nom, Prénom <?php echo $donnee['lastname'] ;?></li>
