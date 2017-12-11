@@ -1,0 +1,47 @@
+body{
+	font-family: 'Muli', sans-serif;
+	margin-right: 15%;
+	margin-left: 15%;
+	background-color: #fff3e6;
+}
+header{
+	text-align: center;
+}
+nav{
+	background-color: lightgrey;
+	padding: 20px;
+}
+ul{
+	list-style: none;
+}
+figcaption{
+	color: grey;
+}
+#title{
+	font-family: IRON MAN;
+	src: url('font_title/IRON MAN.ttf');
+}
+.Image_du_film figure{
+	float: left;
+	display: inline-block;
+	
+}
+.Image_du_film img{
+	width: 12vw;
+	height: 20vw;
+	margin: 10px;
+}
+.after-box{
+	clear: left;
+}
+#Affiche_du_film{
+	float: left;
+	height: 25vw;
+	width: 17vw;
+}
+.disposition_photo_text{
+	overflow: hidden;
+}
+.photo{
+	float: left;
+}
