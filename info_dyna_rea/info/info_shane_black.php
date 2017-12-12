@@ -1,20 +1,17 @@
 <?php
 	include 'connect.php';
+	include 'class_Directors.php';
+	include 'class_Movies.php';
 	
-	$reponse = $bdd->query('SELECT * FROM person WHERE id=8');
-	$donnee = $reponse->fetch();
+	getAllDirectors();
 	
-	$reponse2 = $bdd->query('SELECT * FROM picture WHERE id=8');
-	$donnee2 = $reponse2->fetch();
-
-	$alt = $donnee2['legend'];
-	$src = $donnee2['path'];
+	getAllMovies();
 ?>
 <article>
 	<h3>Réalisateur :</h3>
 	<figure>
 		<img alt="" src="Shane_Black.jpg" />
-		<img src="../../Images/Iron_Man_3/Shane_Black.jpg" alt="Flowers in Chania">
+		<img src="<?php echo $donnee2['path']; ?>" alt="<?php echo $donnee2['legend']; ?>">
 	</figure>
 	<ul>
 		<li>Nom, Prénom <?php echo $donnee['lastname'] ;?></li>
