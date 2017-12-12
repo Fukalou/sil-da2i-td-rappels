@@ -1,34 +1,38 @@
 <?php
 	include('connect.php');
 	include('fonction.php');
+	
+	$id = $_GET['id'];
+	$reponse = $bdd->query('SELECT * FROM person WHERE id="'.$id.'"');
+	$person = $reponse->fetch();
 ?>
 
 <!Doctype html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="style.css">
-		<title>Shane Black</title>
+		<link rel="stylesheet" type="text/css" href="CSS/style.css">
+		<title><?php echo $person['lastname']; echo $person['firstname']; ?></title>
 	</head>
 		
 	<body>
 		<main>
-			<h1>Shane Black</h1>
+			<h1><?php echo $person['lastname']; echo $person['firstname']; ?></h1>
 			<nav>
 				<a href="index.html">Acceuil</a>
 				<a href="realisateur.html">Réalisateur</a>
-				<a href="acteur.html">Acteurs</a>
+				<a href="acteur.php">Acteurs</a>
 			</nav>
 			<section>
 					<?php
-						include('info_dyna_rea/info/info_shane_black.php');
-						include('info_dyna_rea/bio/bio_shane_black.php');
+						include('info_dyna_rea/info/info.php');
+						include('info_dyna_rea/bio/bio.php');
 					?>
 			</section>
 		</main>
 		<?php
-			include('info_dyna_rea/filmo/filmo_shane_black.php');
-			include('info_dyna_rea/acteur_fetiche/liste_shane_black.php');
+			include('info_dyna_rea/filmo/filmo.php');
+			include('info_dyna_rea/acteur_fetiche/liste.php');
 			
 		?>
 		<footer>
