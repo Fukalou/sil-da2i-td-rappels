@@ -1,17 +1,30 @@
 <?php
 	include 'connect.php';
+	
+	$id = $_GET['id'];
+	$reponse = $bdd->query('SELECT idPicture FROM personHasPicture WHERE idPerson="'.$id.'"');
+	$donnee_num_picture = $reponse->fetch();
+	$num_picture = $donnee_num_picture['idPicture'];
+	
+	$reponse = $bdd->query('SELECT * FROM person WHERE id="'.$id.'"');
+	$donnee_person = $reponse->fetch();
+	
+	$reponse = $bdd->query('SELECT * FROM picture WHERE id="'.$num_picture.'"');
+	$donnee_picture = $reponse->fetch();
+
+	$reponse = $bdd->query('SELECT * FROM movieHasPerson WHERE idPerson="'.$id.'"');
+	$donnee_role = $reponse->fetch();
 ?>
 <article>
 	<h3>Réalisateur :</h3>
 	<figure>
-		<img alt="" src="Shane_Black.jpg" />
-		<img src="<?php echo $donnee2['path']; ?>" alt="<?php echo $donnee2['legend']; ?>">
+		<img src="<?php echo $donnee_picture['path']; ?>" alt="<?php echo $donnee_picture['legend']; ?>">
 	</figure>
 	<ul>
-		<li>Nom, Prénom <?php echo $donnee['lastname'] ;?></li>
-		<li>Métier Scénariste, Acteur, Réalisateur</li>
+		<li>Nom, Prénom <?php echo $donnee_person['lastname'] ; ?></li>
+		<li>Métier <?php echo $donnee_role['role']; ?></li>
 		<li>Nationalité Américain</li>
-		<li>Naissance <time><?php echo $donnee['birthDate'] ;?></time> (Pittsburgh, Pennsylvanie, USA)</li>
+		<li>Naissance <time><?php echo $donnee_person['birthDate'] ;?></time> (Pittsburgh, Pennsylvanie, USA)</li>
 		<li>Age 55 ans</li>
 	</ul>
 </article>

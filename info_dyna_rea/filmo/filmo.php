@@ -1,33 +1,27 @@
 <?php
 	include 'connect.php';
+
+	$id = $_GET['id'];
+	$reponse = $bdd->query('SELECT idPicture FROM personHasPicture WHERE idPerson="'.$id.'"');
 ?>
 
 <section>
 	<article>
 		<h3>Filmographie :</h3>
-		<figure>
-		<?php 
-			$reponse = $bdd->query('SELECT * FROM picture WHERE id=10');
-			$donnee = $reponse->fetch();
-		?>
-		<img alt="<?php echo $donnee['path']; ?>" src="<?php echo $donnee['path']; ?>" >
-		<figcaption>Affiche du film Predator</figcaption>
-		</figure>
-		<figure>
-			<?php 
-				$reponse = $bdd->query('SELECT * FROM picture WHERE id=11');
-				$donnee = $reponse->fetch();
-			?>
-			<img alt="<?php echo $donnee['legend']; ?>" src="<?php echo $donnee['path']; ?>" >
-			<figcaption>Affiche du film Nice Guys</figcaption>
-		</figure>
-		<figure>
-			<?php 
-				$reponse = $bdd->query('SELECT * FROM picture WHERE id=12');
-				$donnee = $reponse->fetch();
-			?>
-			<img alt="<?php echo $donnee['legend']; ?>" src="<?php echo $donnee['path']; ?>" >
-			<figcaption>Affiche du film Kiss Kiss Bang Bang</figcaption>
-		</figure>
+		<?php
+		
+			while($donnee = $reponse->fetch())
+			{
+				$num_picture = $donnee['idPicture'];
+				unset($donnee[0]);
+				
+				$reponse2 = $bdd->query('SELECT * FROM picture WHERE id="'.$num_picture.'"');
+				$donnee_picture = $reponse2->fetch();
+				?>
+				<figure>
+					<img alt="<?php echo $donnee_picture['legend']; ?>" src="<?php echo $donnee_picture['path']; ?>" >
+					<figcaption><?php echo $donnee_picture['legend']; ?></figcaption>
+				</figure>
+			<?php }?>
 	</article>
 </section>
