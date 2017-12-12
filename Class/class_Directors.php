@@ -1,5 +1,5 @@
 <?php
-	include 'connect.php';
+	include '../connect.php';
 	Class Directory
 	{
 		public function getAllDirectors()

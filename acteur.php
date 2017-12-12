@@ -2,7 +2,7 @@
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="CSS/style.css">
 		<title>Acteur</title>
 	</head>
 		
@@ -11,7 +11,7 @@
 			<h1>Acteur Principaux</h1>
 			<nav>
 				<a href="index.html">Acceuil</a>
-				<a href="realisateur.html">Réalisateur</a>
+				<a href="realisateur.php?id=8">Réalisateur</a>
 				<a href="acteur.html">Acteurs</a>
 			</nav>
 		<section>

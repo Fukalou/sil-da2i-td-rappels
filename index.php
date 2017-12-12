@@ -1,18 +1,11 @@
 <?php
-	try
-	{
-		$bdd = new PDO('mysql:host=localhost;dbname=thomas-duprez_iron_man;charset=utf8', 'root', '');
-	}
-	catch (Exception $e)
-	{
-	        die('Erreur : ' . $e->getMessage());
-	}
+	include 'connect.php';
 ?>
 <!Doctype html>
 <html>
 	<head>
 		<meta charset="UTF-8">
-		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="stylesheet" type="text/css" href="CSS/style.css">
 		<title>Iron Man 3</title>
 	</head>
 		
