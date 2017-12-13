@@ -1,5 +1,5 @@
 <?php
-	include 'connect.php';
+	include 'filmo/connect.php';
 
 	$id = $_GET['id'];
 	// récupere tous les id des films d'un réalisateur
@@ -23,7 +23,7 @@
 					while($donnee_picture = $reponse3->fetch())
 					{ ?>
 						<figure class="Image_du_film">
-							<img alt="<?php echo $donnee_picture['legend']; ?>" src="<?php echo $donnee_picture['path']; ?>" >
+							<img alt="<?php echo $donnee_picture['legend']; ?>" src="<?php echo $donnee_picture['filmo/path']; ?>" >
 							<figcaption><?php echo $donnee_picture['legend']; ?></figcaption>
 						</figure>
 			<?php	}

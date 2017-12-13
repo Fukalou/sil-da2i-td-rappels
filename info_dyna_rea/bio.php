@@ -1,5 +1,5 @@
 <?php
-	include 'connect.php';
+	include 'bio/connect.php';
 	
 	$id = $_GET['id'];
 	$reponse = $bdd->query('SELECT biography FROM person WHERE id="'.$id.'"');
