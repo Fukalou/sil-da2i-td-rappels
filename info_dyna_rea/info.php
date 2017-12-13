@@ -1,5 +1,5 @@
 <?php
-	include 'info/connect.php';
+	include 'connect.php';
 	
 	$id = $_GET['id'];
 	$reponse = $bdd->query('SELECT idPicture FROM personHasPicture WHERE idPerson="'.$id.'"');
@@ -18,7 +18,7 @@
 <article>
 	<h3>Réalisateur :</h3>
 	<figure>
-		<img src="<?php echo $donnee_picture['info/path']; ?>" alt="<?php echo $donnee_picture['legend']; ?>">
+		<img src="<?php echo $donnee_picture['path']; ?>" alt="<?php echo $donnee_picture['legend']; ?>">
 	</figure>
 	<ul>
 		<li>Nom, Prénom <?php echo $donnee_person['lastname'] ; ?></li>

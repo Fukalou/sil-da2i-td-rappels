@@ -25,14 +25,14 @@
 			</nav>
 			<section>
 					<?php
-						include('info_dyna_rea/info/info.php');
-						include('info_dyna_rea/bio/bio.php');
+						include('info_dyna_rea/info.php');
+						include('info_dyna_rea/bio.php');
 					?>
 			</section>
 		</main>
 		<?php
-			include('info_dyna_rea/filmo/filmo.php');
-			include('info_dyna_rea/acteur_fetiche/liste.php');
+			include('info_dyna_rea/filmo.php');
+			include('info_dyna_rea/liste.php');
 			
 		?>
 		<footer>
