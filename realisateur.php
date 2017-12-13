@@ -12,15 +12,15 @@
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
-		<title><?php echo $person['lastname']; echo $person['firstname']; ?></title>
+		<title><?php echo $person['lastname'];?> <?php echo $person['firstname']; ?></title>
 	</head>
 		
 	<body>
 		<main>
-			<h1><?php echo $person['lastname']; echo $person['firstname']; ?></h1>
+			<h1><?php echo $person['lastname'];?> <?php echo $person['firstname']; ?></h1>
 			<nav>
-				<a href="index.html">Acceuil</a>
-				<a href="realisateur.html">Réalisateur</a>
+				<a href="index.php">Acceuil</a>
+				<a href="realisateur..php">Réalisateur</a>
 				<a href="acteur.php">Acteurs</a>
 			</nav>
 			<section>
@@ -32,7 +32,7 @@
 		</main>
 		<?php
 			include('info_dyna_rea/filmo.php');
-			include('info_dyna_rea/liste.php');
+			include('info_dyna_rea/acteurFetiche.php');
 			
 		?>
 		<footer>

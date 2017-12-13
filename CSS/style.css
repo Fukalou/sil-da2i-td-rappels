@@ -17,10 +17,6 @@ ul{
 figcaption{
 	color: grey;
 }
-#title{
-	font-family: IRON MAN;
-	src: url('../font_title/IRON MAN.ttf');
-}
 .Image_du_film figure{
 	float: left;
 	display: inline-block;
