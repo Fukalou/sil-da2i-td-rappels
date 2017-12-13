@@ -1,7 +1,8 @@
 <?php
 	include 'connect.php';
-
-	$reponse = $bdd->query('SELECT biography FROM person WHERE id=8');
+	
+	$id = $_GET['id'];
+	$reponse = $bdd->query('SELECT biography FROM person WHERE id="'.$id.'"');
 	$donnee = $reponse->fetch();
 ?>
 <article>
