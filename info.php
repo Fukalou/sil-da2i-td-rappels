@@ -16,15 +16,12 @@
 	$donnee_role = $reponse->fetch();
 ?>
 <article>
-	<h3>Réalisateur :</h3>
 	<figure>
 		<img src="<?php echo $donnee_picture['path']; ?>" alt="<?php echo $donnee_picture['legend']; ?>">
 	</figure>
 	<ul>
 		<li>Nom, Prénom <?php echo $donnee_person['lastname'] ; ?></li>
 		<li>Métier <?php echo $donnee_role['role']; ?></li>
-		<li>Nationalité Américain</li>
-		<li>Naissance <time><?php echo $donnee_person['birthDate'] ;?></time> (Pittsburgh, Pennsylvanie, USA)</li>
-		<li>Age 55 ans</li>
+		<li>Naissance <time><?php echo $donnee_person['birthDate'] ;?></time></li>
 	</ul>
 </article>

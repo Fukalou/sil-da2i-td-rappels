@@ -1,6 +1,5 @@
 <?php
 	include('connect.php');
-	include('fonction.php');
 	
 	$id = $_GET['id'];
 	$reponse = $bdd->query('SELECT * FROM person WHERE id="'.$id.'"');
@@ -20,19 +19,17 @@
 			<h1><?php echo $person['lastname'];?> <?php echo $person['firstname']; ?></h1>
 			<nav>
 				<a href="index.php">Acceuil</a>
-				<a href="realisateur..php">Réalisateur</a>
-				<a href="acteur.php">Acteurs</a>
 			</nav>
 			<section>
 					<?php
-						include('info_dyna_rea/info.php');
-						include('info_dyna_rea/bio.php');
+						include('info.php');
+						include('bio.php');
 					?>
 			</section>
 		</main>
 		<?php
-			include('info_dyna_rea/filmo.php');
-			include('info_dyna_rea/acteurFetiche.php');
+			include('filmo.php');
+			include('acteurFetiche.php');
 			
 		?>
 		<footer>

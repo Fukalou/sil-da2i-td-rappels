@@ -1,53 +1,50 @@
+<?php
+	include 'connect.php';
+	
+	$id = $_GET['id'];
+	$reponse_id_acteur = $bdd->query('SELECT * FROM person WHERE id="'.$id.'"');
+	$donnee_acteur = $reponse_id_acteur->fetch();
+	
+	$reponse_id_picture_acteur = $bdd->query('SELECT idPicture FROM personHasPicture WHERE idPerson="'.$id.'" AND type="gallery"');
+	$donnee_id_picture_acteur = $reponse_id_picture_acteur->fetch();
+
+	$reponse_picture_acteur = $bdd->query('SELECT * FROM picture WHERE id="'.$donnee_id_picture_acteur['idPicture'].'"');
+	$donnee_picture_acteur = $reponse_picture_acteur->fetch();
+
+	$reponse_job_acteur = $bdd->query('SELECT role FROM movieHasPerson WHERE idPerson="'.$id.'"');
+	$donnee_job_acteur = $reponse_job_acteur->fetch();
+?>
+
+
 <!Doctype html>
 <html>
 	<head>
 		<meta charset="UTF-8">
 		<link rel="stylesheet" type="text/css" href="CSS/style.css">
-		<title>Acteur</title>
+		<title><?php echo $donnee_acteur['lastname'];?> <?php echo $donnee_acteur['firstname'];?></title>
 	</head>
 		
 	<body>
 		<main>
-			<h1>Acteur Principaux</h1>
+			<h1><?php echo $donnee_acteur['lastname'];?> <?php echo $donnee_acteur['firstname'];?></h1>
 			<nav>
-				<a href="index.html">Acceuil</a>
-				<a href="realisateur.php?id=8">Réalisateur</a>
-				<a href="acteur.html">Acteurs</a>
+				<a href="index.php">Acceuil</a>
 			</nav>
 		<section>
 			<article>
-				<h3>Acteur Principaux :</h3>
 				<figure>
-					<img alt="Shane Black" src="Images/Iron_Man_3/Robert_Downey_JR.jpg">
+					<img alt="<?php echo $donnee_picture_acteur['legend'];?>" src="<?php echo $donnee_picture_acteur['path'];?>">
 				</figure>
 				<ul>
-					<li>Nom, Prénom : Robert John Downey Jr</li>
-					<li>Métier : Acteur</li>
-					<li>Nationalité : Américain</li>
-					<li>Naissance : <time>4 avril 1965</time> (New York, New York - Etats-Unis)</li>
-					<li>Age : 52 ans</li>
-				</ul>
-				<figure>
-					<img alt="Shane Black" src="Images/Iron_Man_3/Gwyneth_Paltrow.jpg">
-				</figure>
-				<ul>
-					<li>Nom, Prénom : Gwyneth Kate Paltrow</li>
-					<li>Métier : Actrice</li>
-					<li>Nationalité : Américain</li>
-					<li>Naissance : <time>27 septembre 1972</time> (Los Angeles, Californie - Etats-Unis)</li>
-					<li>Age : 45 ans</li>
-				</ul>
-				<figure>
-					<img alt="Shane Black" src="Images/Iron_Man_3/Don_Cheadle.jpg">
-				</figure>
-				<ul>
-					<li>Nom, Prénom : Donald Frank Cheadle</li>
-					<li>Métier : Acteur</li>
-					<li>Nationalité : Américain</li>
-					<li>Naissance : <time>29 novembre 1964</time> (Kansas City, Missouri - Etats-Unis)</li>
-					<li>Age : 52 ans</li>
+					<li>Nom, Prénom : <?php echo $donnee_acteur['lastname'];?> <?php echo $donnee_acteur['firstname'];?></li>
+					<li>Métier : <?php echo $donnee_job_acteur['role'];?></li>
+					<li>Naissance : <time><?php echo $donnee_acteur['birthDate'];?></time></li>
 				</ul>
 			</article>
+			<?php 
+				include 'bio.php';
+				include 'filmo.php';
+			?>
 		</section>
 		<footer>
 			<p>Thomas Duprez</p>
