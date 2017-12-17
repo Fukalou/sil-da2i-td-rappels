@@ -20,7 +20,7 @@
 		<img src="<?php echo $donnee_picture['path']; ?>" alt="<?php echo $donnee_picture['legend']; ?>">
 	</figure>
 	<ul>
-		<li>Nom, Prénom <?php echo $donnee_person['lastname'] ; ?></li>
+		<li>Nom, Prénom <?php echo $donnee_person['lastname'];?> <?php echo $donnee_person['firstname']; ?></li>
 		<li>Métier <?php echo $donnee_role['role']; ?></li>
 		<li>Naissance <time><?php echo $donnee_person['birthDate'] ;?></time></li>
 	</ul>

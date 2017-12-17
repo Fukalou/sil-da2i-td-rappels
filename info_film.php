@@ -28,7 +28,7 @@
 					$reponse_realisateur = $bdd->query('SELECT * FROM person WHERE id="'.$donnee_id_realisateur['idPerson'].'"');
 					while($donnee_realisateur = $reponse_realisateur->fetch())
 					{?>
-						<a href="acteur.php?id=<?php echo $donnee_id_realisateur['idPerson'];?>">
+						<a href="realisateur.php?id=<?php echo $donnee_id_realisateur['idPerson'];?>">
 							<li><?php echo $donnee_realisateur['lastname'];?> <?php echo $donnee_realisateur['firstname'];?></li>
 						</a>
 			<?php	}
